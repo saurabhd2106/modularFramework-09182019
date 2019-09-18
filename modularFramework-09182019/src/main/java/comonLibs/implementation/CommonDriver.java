@@ -21,7 +21,7 @@ public class CommonDriver implements IDriver {
 	public CommonDriver(String browserType) throws Exception {
 
 		elementDetectionTimeout = 10;
-		pageloadTimeout = 30;
+		pageloadTimeout = 20;
 
 		browserType = browserType.trim();
 
