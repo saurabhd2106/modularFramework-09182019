@@ -63,6 +63,12 @@ public class ElementControl implements ICommonElements {
 	@Override
 	public void changeCheckboxStatus(WebElement element, boolean expectedStatus) throws Exception {
 		
+		boolean currentStatus = element.isSelected();
+		
+		if(expectedStatus != currentStatus) {
+			
+			element.click();
+		}
 		
 	}
 
