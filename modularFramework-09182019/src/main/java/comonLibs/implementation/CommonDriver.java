@@ -30,9 +30,7 @@ public class CommonDriver implements IDriver {
 			System.setProperty("webdriver.chrome.driver",
 					"C:/Users/Saurabh Dhingra/workspace/libs/chromedriver_76/Chromedriver.exe");
 			driver = new ChromeDriver();
-		}
-
-		if (browserType.equalsIgnoreCase("chrome-headless")) {
+		} else if (browserType.equalsIgnoreCase("chrome-headless")) {
 
 			System.setProperty("webdriver.chrome.driver",
 					"C:/Users/Saurabh Dhingra/workspace/libs/chromedriver_76/Chromedriver.exe");
@@ -41,15 +39,12 @@ public class CommonDriver implements IDriver {
 			option.addArguments("--headless");
 
 			driver = new ChromeDriver(option);
-		}
-
-		if (browserType.equalsIgnoreCase("firefox")) {
+		} else if (browserType.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
 					"C:/Users/Saurabh Dhingra/workspace/libs/geckodriver-v0.20.1-win64/geckodriver.exe");
 
 			driver = new FirefoxDriver();
-		}
-		if (browserType.equalsIgnoreCase("edge")) {
+		} else if (browserType.equalsIgnoreCase("edge")) {
 			System.setProperty("webdriver.edge.driver",
 					"C:/Users/Saurabh Dhingra/workspace/libs/MicrosoftWebDriver.exe");
 
@@ -67,16 +62,20 @@ public class CommonDriver implements IDriver {
 
 	@Override
 	public void navigateToFirstUrl(String url) throws Exception {
-		
+
 		url = url.trim();
 
 		driver.manage().timeouts().pageLoadTimeout(pageloadTimeout, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(elementDetectionTimeout, TimeUnit.SECONDS);
-		
+
 		driver.get(url);
 
 	}
-	
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
 	public void setPageloadTimeout(int pageloadTimeout) {
 		this.pageloadTimeout = pageloadTimeout;
 	}
@@ -87,25 +86,25 @@ public class CommonDriver implements IDriver {
 
 	@Override
 	public String getTitle() throws Exception {
-		
+
 		return driver.getTitle();
 	}
 
 	@Override
 	public String getCurrentUrl() throws Exception {
-		
+
 		return driver.getCurrentUrl();
 	}
 
 	@Override
 	public String getPageSource() throws Exception {
-		
+
 		return driver.getPageSource();
 	}
 
 	@Override
 	public void navigateToUrl(String url) throws Exception {
-		
+
 		url = url.trim();
 		driver.navigate().to(url);
 
@@ -131,8 +130,8 @@ public class CommonDriver implements IDriver {
 
 	@Override
 	public void closeBrowser() throws Exception {
-		
-		if(driver != null) {
+
+		if (driver != null) {
 			driver.close();
 		}
 
@@ -140,12 +139,10 @@ public class CommonDriver implements IDriver {
 
 	@Override
 	public void closeAllBrowsers() throws Exception {
-		if(driver != null) {
+		if (driver != null) {
 			driver.quit();
 		}
 
 	}
-
-	
 
 }
