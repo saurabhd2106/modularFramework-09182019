@@ -6,35 +6,28 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import comonLibs.implementation.DropdownControl;
-import comonLibs.implementation.ElementControl;
-
-public class AmazonHomePage {
+public class AmazonHomePage extends BasePage {
 
 	@CacheLookup
-	@FindBy(id="twotabsearchtextbox")
+	@FindBy(id = "twotabsearchtextbox")
 	private WebElement searchBox;
 
 	@CacheLookup
-	@FindBy(id="searchDropdownBox")
+	@FindBy(id = "searchDropdownBox")
 	private WebElement searchCat;
 
 	@CacheLookup
-	@FindBy(xpath="//input[@value='Go']")
+	@FindBy(xpath = "//input[@value='Go']")
 	private WebElement searchButton;
 
-	@FindBy(xpath="//span[@data-component-type='s-result-info-bar']")
+	@FindBy(xpath = "//span[@data-component-type='s-result-info-bar']")
 	private WebElement searchResult;
 
-	private ElementControl elementControl;
-	private DropdownControl dropdownControl;
-
 	public AmazonHomePage(WebDriver driver) {
+		
+		super(driver);
 
 		PageFactory.initElements(driver, this);
-		
-		elementControl = new ElementControl();
-		dropdownControl = new DropdownControl();
 
 	}
 

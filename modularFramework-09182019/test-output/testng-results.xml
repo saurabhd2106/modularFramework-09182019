@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23502" started-at="2019-09-23T19:57:49Z" finished-at="2019-09-23T19:58:12Z">
+  <suite name="Amazon Test Suite" duration-ms="18781" started-at="2019-09-24T17:20:33Z" finished-at="2019-09-24T17:20:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23502" started-at="2019-09-23T19:57:49Z" finished-at="2019-09-23T19:58:12Z">
+    <test name="Home page Test" duration-ms="18781" started-at="2019-09-24T17:20:33Z" finished-at="2019-09-24T17:20:52Z">
       <class name="in.amazon.tests.AmazonHomePageTests">
-        <test-method status="PASS" signature="preSetup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@47c62251]" name="preSetup" is-config="true" duration-ms="488" started-at="2019-09-23T19:57:48Z" finished-at="2019-09-23T19:57:49Z">
+        <test-method status="PASS" signature="preSetup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@6f7fd0e6]" name="preSetup" is-config="true" duration-ms="482" started-at="2019-09-24T17:20:33Z" finished-at="2019-09-24T17:20:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@47c62251]" name="setup" is-config="true" duration-ms="11295" started-at="2019-09-23T19:57:49Z" finished-at="2019-09-23T19:58:00Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@6f7fd0e6]" name="setup" is-config="true" duration-ms="11755" started-at="2019-09-24T17:20:33Z" finished-at="2019-09-24T17:20:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifySearchProduct()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@47c62251]" name="verifySearchProduct" duration-ms="11082" started-at="2019-09-23T19:58:00Z" finished-at="2019-09-23T19:58:11Z">
+        <test-method status="PASS" signature="verifySearchProduct()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@6f7fd0e6]" name="verifySearchProduct" duration-ms="4001" started-at="2019-09-24T17:20:45Z" finished-at="2019-09-24T17:20:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchProduct -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@47c62251]" name="cleanUp" is-config="true" duration-ms="1030" started-at="2019-09-23T19:58:11Z" finished-at="2019-09-23T19:58:12Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@6f7fd0e6]" name="cleanUp" is-config="true" duration-ms="2954" started-at="2019-09-24T17:20:49Z" finished-at="2019-09-24T17:20:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-        <test-method status="PASS" signature="postCleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@47c62251]" name="postCleanUp" is-config="true" duration-ms="746" started-at="2019-09-23T19:58:12Z" finished-at="2019-09-23T19:58:13Z">
+        <test-method status="PASS" signature="postCleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@6f7fd0e6]" name="postCleanUp" is-config="true" duration-ms="825" started-at="2019-09-24T17:20:52Z" finished-at="2019-09-24T17:20:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postCleanUp -->
       </class> <!-- in.amazon.tests.AmazonHomePageTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Home page Test -->
+  </suite> <!-- Amazon Test Suite -->
 </testng-results>

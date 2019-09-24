@@ -1,6 +1,7 @@
 package in.amazon.tests;
 
 import java.util.Date;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -15,12 +16,13 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import comonLibs.implementation.CommonDriver;
 import in.amazon.pages.AmazonHomePage;
+import in.amazon.utils.ConfigFileReadUtils;
 
 public class BaseTest {
 
 	CommonDriver cmnDriver;
 
-	String url = "https://www.amazon.in/";
+	String url;
 
 	AmazonHomePage amazonHomepage;
 
@@ -30,6 +32,9 @@ public class BaseTest {
 	static String projectName;
 	static String executionStartTime;
 	static String reportFileName;
+
+	static String configFilepath;
+	static Properties configProperties;
 
 	ExtentHtmlReporter htmlReporter;
 	ExtentReports extent;
@@ -46,10 +51,15 @@ public class BaseTest {
 
 		reportFileName = String.format("%s/reports/%s_%s.html", currentWorkingDirectory, projectName,
 				executionStartTime);
+
+		configFilepath = String.format("%s/config/config.properties", currentWorkingDirectory);
+
 	}
 
-	@BeforeSuite(alwaysRun=true)
-	public void preSetup() {
+	@BeforeSuite(alwaysRun = true)
+	public void preSetup() throws Exception {
+
+		configProperties = ConfigFileReadUtils.configFileReader(configFilepath);
 
 		htmlReporter = new ExtentHtmlReporter(reportFileName);
 
@@ -59,24 +69,26 @@ public class BaseTest {
 
 	}
 
-	@BeforeClass(alwaysRun=true)
+	@BeforeClass(alwaysRun = true)
 	public void setup() throws Exception {
 
 		extentTest = extent.createTest("Setup - Invoking Browser and navigating to base URL");
 
-		String browserType = "chrome";
+		String browserType = configProperties.getProperty("browserType");
 
 		extentTest.log(Status.INFO, "The browser type is - " + browserType);
 		cmnDriver = new CommonDriver(browserType);
 
-		int elementDetectionTimeout = 10;
+		int elementDetectionTimeout = Integer.parseInt(configProperties.getProperty("elementDetectionTimeout"));
 		extentTest.log(Status.INFO, "Implicit wait was set to - " + elementDetectionTimeout);
 		cmnDriver.setElementDetectionTimeout(elementDetectionTimeout);
 
-		int pageLoadTimeout = 20;
+		int pageLoadTimeout = Integer.parseInt(configProperties.getProperty("elementDetectionTimeout"));
+		;
 		extentTest.log(Status.INFO, "Page load timeout was set to - " + pageLoadTimeout);
 		cmnDriver.setPageloadTimeout(pageLoadTimeout);
 
+		url = configProperties.getProperty("baseUrl");
 		extentTest.log(Status.INFO, "Base URL - " + url);
 		cmnDriver.navigateToFirstUrl(url);
 
@@ -85,7 +97,7 @@ public class BaseTest {
 		amazonHomepage = new AmazonHomePage(driver);
 	}
 
-	@AfterClass(alwaysRun=true)
+	@AfterClass(alwaysRun = true)
 	public void cleanUp() throws Exception {
 
 		extentTest = extent.createTest("Clean Up");
@@ -95,7 +107,7 @@ public class BaseTest {
 
 	}
 
-	@AfterSuite(alwaysRun=true)
+	@AfterSuite(alwaysRun = true)
 	public void postCleanUp() {
 
 		extent.flush();

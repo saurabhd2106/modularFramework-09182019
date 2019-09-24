@@ -1,5 +1,12 @@
 package in.amazon.pages;
 
-public class AmazonLoginPage {
+import org.openqa.selenium.WebDriver;
+
+public class AmazonLoginPage extends BasePage{
+
+	public AmazonLoginPage(WebDriver driver) {
+		super(driver);
+		
+	}
 
 }
