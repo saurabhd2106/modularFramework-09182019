@@ -1,4 +1,4 @@
-package in.amazon.utils;
+package comonLibs.utils;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

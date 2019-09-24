@@ -17,8 +17,10 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import comonLibs.implementation.CommonDriver;
+import comonLibs.implementation.ScreenshotControl;
+import comonLibs.utils.ConfigFileReadUtils;
 import in.amazon.pages.AmazonHomePage;
-import in.amazon.utils.ConfigFileReadUtils;
+
 
 public class BaseTest {
 
@@ -29,6 +31,8 @@ public class BaseTest {
 	AmazonHomePage amazonHomepage;
 
 	WebDriver driver;
+
+	ScreenshotControl screenshotControl;
 
 	static String currentWorkingDirectory;
 	static String projectName;
@@ -96,6 +100,8 @@ public class BaseTest {
 		driver = cmnDriver.getDriver();
 
 		amazonHomepage = new AmazonHomePage(driver);
+
+		screenshotControl = new ScreenshotControl(driver);
 	}
 
 	@AfterClass(alwaysRun = true)
@@ -116,13 +122,20 @@ public class BaseTest {
 	}
 
 	@AfterMethod
-	public void afterMethod(ITestResult result) {
+	public void afterMethod(ITestResult result) throws Exception {
 		String methodName = result.getName();
 
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			extentTest.log(Status.PASS, "Test case pass - " + methodName);
 		} else if (result.getStatus() == ITestResult.FAILURE) {
 			extentTest.log(Status.FAIL, "Test case fail - " + methodName);
+
+			String screenhotFilename = String.format("%s/screenshots/%s_%s.jpeg", currentWorkingDirectory, methodName,
+					executionStartTime);
+
+			screenshotControl.captureAndSaveScreenshot(screenhotFilename);
+
+			extentTest.addScreenCaptureFromPath(screenhotFilename);
 		} else {
 			extentTest.log(Status.SKIP, "Test case skip - " + methodName);
 		}

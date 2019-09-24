@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Amazon Test Suite" duration-ms="11659" started-at="2019-09-24T18:19:16Z" finished-at="2019-09-24T18:19:27Z">
+  <suite name="Amazon Test Suite" duration-ms="12284" started-at="2019-09-24T18:41:35Z" finished-at="2019-09-24T18:41:47Z">
     <groups>
     </groups>
-    <test name="Home page Test" duration-ms="11659" started-at="2019-09-24T18:19:16Z" finished-at="2019-09-24T18:19:27Z">
+    <test name="Home page Test" duration-ms="12284" started-at="2019-09-24T18:41:35Z" finished-at="2019-09-24T18:41:47Z">
       <class name="in.amazon.tests.AmazonHomePageTests">
-        <test-method status="PASS" signature="preSetup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="preSetup" is-config="true" duration-ms="452" started-at="2019-09-24T18:19:15Z" finished-at="2019-09-24T18:19:16Z">
+        <test-method status="PASS" signature="preSetup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="preSetup" is-config="true" duration-ms="481" started-at="2019-09-24T18:41:35Z" finished-at="2019-09-24T18:41:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="setup" is-config="true" duration-ms="6781" started-at="2019-09-24T18:19:16Z" finished-at="2019-09-24T18:19:22Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="setup" is-config="true" duration-ms="6790" started-at="2019-09-24T18:41:35Z" finished-at="2019-09-24T18:41:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="verifyTitleOfTheWebpage()[pri:-1000, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="verifyTitleOfTheWebpage" duration-ms="67" started-at="2019-09-24T18:19:22Z" finished-at="2019-09-24T18:19:23Z">
+        <test-method status="FAIL" signature="verifyTitleOfTheWebpage()[pri:-1000, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="verifyTitleOfTheWebpage" duration-ms="55" started-at="2019-09-24T18:41:42Z" finished-at="2019-09-24T18:41:42Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Amazon Home Page] but found [Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in]]]>
@@ -60,37 +60,37 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTitleOfTheWebpage -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="afterMethod" is-config="true" duration-ms="12" started-at="2019-09-24T18:19:23Z" finished-at="2019-09-24T18:19:23Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="afterMethod" is-config="true" duration-ms="869" started-at="2019-09-24T18:41:42Z" finished-at="2019-09-24T18:41:43Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyTitleOfTheWebpage status=FAILURE method=AmazonHomePageTests.verifyTitleOfTheWebpage()[pri:-1000, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec] output={null}]]]>
+                <![CDATA[[TestResult name=verifyTitleOfTheWebpage status=FAILURE method=AmazonHomePageTests.verifyTitleOfTheWebpage()[pri:-1000, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="verifySearchProduct()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="verifySearchProduct" duration-ms="3270" started-at="2019-09-24T18:19:23Z" finished-at="2019-09-24T18:19:26Z">
+        <test-method status="PASS" signature="verifySearchProduct()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="verifySearchProduct" duration-ms="2936" started-at="2019-09-24T18:41:43Z" finished-at="2019-09-24T18:41:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchProduct -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-09-24T18:19:26Z" finished-at="2019-09-24T18:19:26Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="afterMethod" is-config="true" duration-ms="3" started-at="2019-09-24T18:41:46Z" finished-at="2019-09-24T18:41:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySearchProduct status=SUCCESS method=AmazonHomePageTests.verifySearchProduct()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec] output={null}]]]>
+                <![CDATA[[TestResult name=verifySearchProduct status=SUCCESS method=AmazonHomePageTests.verifySearchProduct()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="cleanUp" is-config="true" duration-ms="1407" started-at="2019-09-24T18:19:26Z" finished-at="2019-09-24T18:19:27Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="cleanUp" is-config="true" duration-ms="1535" started-at="2019-09-24T18:41:46Z" finished-at="2019-09-24T18:41:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-        <test-method status="PASS" signature="postCleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@66a3ffec]" name="postCleanUp" is-config="true" duration-ms="659" started-at="2019-09-24T18:19:27Z" finished-at="2019-09-24T18:19:28Z">
+        <test-method status="PASS" signature="postCleanUp()[pri:0, instance:in.amazon.tests.AmazonHomePageTests@1e88b3c]" name="postCleanUp" is-config="true" duration-ms="741" started-at="2019-09-24T18:41:47Z" finished-at="2019-09-24T18:41:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postCleanUp -->
