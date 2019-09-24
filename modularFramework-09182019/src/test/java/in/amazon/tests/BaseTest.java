@@ -4,7 +4,9 @@ import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -84,7 +86,6 @@ public class BaseTest {
 		cmnDriver.setElementDetectionTimeout(elementDetectionTimeout);
 
 		int pageLoadTimeout = Integer.parseInt(configProperties.getProperty("elementDetectionTimeout"));
-		;
 		extentTest.log(Status.INFO, "Page load timeout was set to - " + pageLoadTimeout);
 		cmnDriver.setPageloadTimeout(pageLoadTimeout);
 
@@ -112,6 +113,19 @@ public class BaseTest {
 
 		extent.flush();
 
+	}
+
+	@AfterMethod
+	public void afterMethod(ITestResult result) {
+		String methodName = result.getName();
+
+		if (result.getStatus() == ITestResult.SUCCESS) {
+			extentTest.log(Status.PASS, "Test case pass - " + methodName);
+		} else if (result.getStatus() == ITestResult.FAILURE) {
+			extentTest.log(Status.FAIL, "Test case fail - " + methodName);
+		} else {
+			extentTest.log(Status.SKIP, "Test case skip - " + methodName);
+		}
 	}
 
 }
